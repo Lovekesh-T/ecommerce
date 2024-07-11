@@ -24,7 +24,7 @@ app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/product", productRoutes);
 app.use("/api/v1/order", orderRoutes);
 app.use("/api/v1/payment", paymentRoutes);
-app.use("/api/vi/dashboard", dashboardRoutes);
+app.use("/api/v1/dashboard", dashboardRoutes);
 
 app.use(errorMiddleware);
 

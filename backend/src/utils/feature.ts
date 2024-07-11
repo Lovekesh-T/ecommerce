@@ -40,7 +40,7 @@ interface MyDocument extends Document {
 
  type FuncProps = {
   length: number;
-  docArr: MyDocument[];
+  docArr: any;
   today: Date;
   property?: "discount" | "total";
 };
@@ -53,7 +53,7 @@ export const getChartData = ({
 }: FuncProps): number[] => {
   const data = new Array(length).fill(0);
 
-  docArr.forEach((doc) => {
+  docArr.forEach((doc:any) => {
     const creationDate = doc.createdAt;
     const monthDiff = (today.getMonth() - creationDate.getMonth() + 12) % 12;
 

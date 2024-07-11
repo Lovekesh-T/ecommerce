@@ -1,8 +1,9 @@
-import { stripe } from "../app.js";
+import { stripe } from "../index.js";
 import { Coupon } from "../models/coupon.model.js";
 import { ApiError } from "../utils/apiError.js";
 import { ApiResponse } from "../utils/apiResponse.js";
 import { asyncError } from "../utils/asyncError.js";
+
 
 export const createPaymentIntent = asyncError(async (req, res) => {
   const { amount } = req.body;

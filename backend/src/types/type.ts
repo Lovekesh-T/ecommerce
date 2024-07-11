@@ -20,6 +20,7 @@ export interface NewProductRequestBody {
 export interface ApiErr {
   message: string;
   statusCode: number;
+  name?:string;
 }
 
 export type ControllerType = (

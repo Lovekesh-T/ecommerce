@@ -37,6 +37,7 @@ export const newOrder = asyncError(
     ) {
       throw new ApiError(400, "All fields are required");
 
+      }
     const order = await Order.create({
       shippingInfo,
       user,
@@ -60,8 +61,8 @@ export const newOrder = asyncError(
     return res
       .status(201)
       .json(new ApiResponse(201, "Order Placed successfully"));
-  }
-);
+}
+)
 
 //my orders
 

@@ -50,12 +50,16 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     onAuthStateChanged(auth, async (user) => {
-      if (user) {
-        const { data } = await getUser(user.uid);
-        dispatch(userExist(data));
-      } else {
-        dispatch(userNotExist());
-      }
+   try {
+       if (user) {
+         const { data } = await getUser(user.uid);
+         dispatch(userExist(data));
+       } else {
+         dispatch(userNotExist());
+       }
+   } catch (error) {
+    console.log(error)
+   }
     });
   }, []);
   return loading ? (

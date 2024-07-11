@@ -16,6 +16,6 @@ router.route("/register").post(userRegister);
 router.route("/all").get(isAdmin, getAllUsers);
 
 //get and delete user
-router.route("/:id").get(isAdmin, getUser).delete(isAdmin, deleteUser);
+router.route("/:id").get( getUser).delete(deleteUser);
 
 export default router;
