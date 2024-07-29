@@ -28,7 +28,6 @@ import { server } from "../redux/store";
 const Cart = () => {
   const dispatch = useDispatch();
   const {
-    loading,
     cartItems,
     subTotal,
     total,
@@ -64,7 +63,7 @@ const Cart = () => {
     const timeOutId = setTimeout(() => {
       if (couponCode) {
         axios
-          .get(`${server}/api/v1/payment/discount?coupon=${couponCode}`, {
+          .post(`${server}/api/v1/payment/discount?coupon=${couponCode}`, {
             cancelToken,
           })
           .then((res) => {
